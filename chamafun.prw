@@ -3,7 +3,8 @@
 #include 'parmtype.ch'
 #Include 'Totvs.ch'
 
-#DEFINE senhaChumbadaNofonte '1234'
+#DEFINE senhaChumbadaNofonte '1234' // Coloque aqui a senha que vc deseja antes de compilar
+#DEFINE funcaoChubadaNoFonte 'altMovBanc' // Coloque aqui a função que vc deseja executar automáticamente antes de compilar
 
 Static Function fOK()
 	If ALLTRIM(cSenha)<> cSenhAce
@@ -47,6 +48,11 @@ user function Chamafun()
 			ALERT('User Function' + cFunc + ' não compilada.')
 		ENDIF
 	else
-		MsgStop('nome de função vazio')
+		MsgStop('Nome de função vazio.' + CRLF + 'Então vai rodar a funcao chubada no fonte.' + CRLF + 'Que no caso é "' + funcaoChubadaNoFonte + '"')
+		IF ExistBlock(funcaoChubadaNoFonte)
+			ExecBlock(funcaoChubadaNoFonte)
+		ELSE
+			ALERT('User Function' + funcaoChubadaNoFonte + ' não compilada.')
+		ENDIF
 	endif
 return
