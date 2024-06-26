@@ -1,7 +1,12 @@
 #Include 'Protheus.CH'
-#include 'RWMAKE.CH'
+//#include 'RWMAKE.CH'
 #include 'parmtype.ch'
 #Include 'Totvs.ch'
+
+/*
+@author Thigo Valerio
+@since 20/05/2019
+*/
 
 #DEFINE senhaChumbadaNofonte '1234' // Coloque aqui a senha que vc deseja antes de compilar
 #DEFINE funcaoChubadaNoFonte 'altMovBanc' // Coloque aqui a função que vc deseja executar automáticamente antes de compilar
