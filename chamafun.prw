@@ -42,7 +42,7 @@ user function Chamafun()
 	IF !fDigSenha()
 		Return
 	Endif
-	cFunc:=	ALLTRIM(FWInputBox('Digite a User Function que deseja chamar', ''))
+	cFunc:=	ALLTRIM(FWInputBox('Digite a User Function que deseja chamar', funcaoChubadaNoFonte))
 	IF !Empty(cFunc)
 		IF UPPER(LEFT(cFunc,2)) == 'U_'
 			cFunc := substr(cFunc,3,len(cFunc)-2)
@@ -53,11 +53,6 @@ user function Chamafun()
 			ALERT('User Function' + cFunc + ' não compilada.')
 		ENDIF
 	else
-		MsgStop('Nome de função vazio.' + CRLF + 'Então vai rodar a funcao chubada no fonte.' + CRLF + 'Que no caso é "' + funcaoChubadaNoFonte + '"')
-		IF ExistBlock(funcaoChubadaNoFonte)
-			ExecBlock(funcaoChubadaNoFonte)
-		ELSE
-			ALERT('User Function' + funcaoChubadaNoFonte + ' não compilada.')
-		ENDIF
+		MsgStop('nome de função vazio')
 	endif
 return
